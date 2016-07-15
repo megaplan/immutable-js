@@ -401,7 +401,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: T, key: number, iter: /*this*/List<T>) => M,
+      mapper: (value: T, key: number, iter: this) => M,
       context?: any
     ): List<M>;
   }
@@ -755,7 +755,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: V, key: K, iter: /*this*/Map<K, V>) => M,
+      mapper: (value: V, key: K, iter: this) => M,
       context?: any
     ): Map<K, M>;
   }
@@ -816,7 +816,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: V, key: K, iter: /*this*/OrderedMap<k, V>) => M,
+      mapper: (value: V, key: K, iter: this) => M,
       context?: any
     ): OrderedMap<K, M>;
 
@@ -946,7 +946,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: T, key: T, iter: /*this*/Set<T>) => M,
+      mapper: (value: T, key: T, iter: this) => M,
       context?: any
     ): Set<M>;
   }
@@ -1008,7 +1008,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: T, key: T, iter: /*this*/OrderedSet<T>) => M,
+      mapper: (value: T, key: T, iter: this) => M,
       context?: any
     ): OrderedSet<M>;
   }
@@ -1145,7 +1145,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: T, key: number, iter: /*this*/Stack<T>) => M,
+      mapper: (value: T, key: number, iter: this) => M,
       context?: any
     ): Stack<M>;
   }
@@ -1341,7 +1341,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: V, key: K, iter: /*this*/Seq.Keyed<K, V>) => M,
+        mapper: (value: V, key: K, iter: this) => M,
         context?: any
       ): Seq.Keyed<K, M>;
     }
@@ -1387,7 +1387,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: T, key: number, iter: /*this*/Seq.Indexed<T>) => M,
+        mapper: (value: T, key: number, iter: this) => M,
         context?: any
       ): Seq.Indexed<M>;
     }
@@ -1435,7 +1435,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: T, key: T, iter: /*this*/Seq.Set<T>) => M,
+        mapper: (value: T, key: T, iter: this) => M,
         context?: any
       ): Seq.Set<M>;
     }
@@ -1514,7 +1514,7 @@ declare module Immutable {
      *
      */
     map<M>(
-      mapper: (value: V, key: K, iter: /*this*/Seq<K, V>) => M,
+      mapper: (value: V, key: K, iter: this) => M,
       context?: any
     ): Seq<K, M>;
   }
@@ -1640,7 +1640,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: V, key: K, iter: /*this*/Iterable.Keyed<K, V>) => M,
+        mapper: (value: V, key: K, iter: this) => M,
         context?: any
       ): Iterable.Keyed<K, M>;
     }
@@ -1828,7 +1828,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: T, key: number, iter: /*this*/Iterable.Indexed<T>) => M,
+        mapper: (value: T, key: number, iter: this) => M,
         context?: any
       ): Iterable.Indexed<T>;
     }
@@ -1877,7 +1877,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: T, key: number, iter: /*this*/Iterable.Set<T>) => M,
+        mapper: (value: T, key: T, iter: this) => M,
         context?: any
       ): Iterable.Set<T>;
     }
@@ -2689,7 +2689,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: V, key: K, iter: /*this*/Collection.Keyed<K, V>) => M,
+        mapper: (value: V, key: K, iter: this) => M,
         context?: any
       ): Collection.Keyed<K, M>;
     }
@@ -2719,7 +2719,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: T, key: number, iter: /*this*/Collection.Indexed<T>) => M,
+        mapper: (value: T, key: number, iter: this) => M,
         context?: any
       ): Collection.Indexed<T>;
     }
@@ -2751,7 +2751,7 @@ declare module Immutable {
        *
        */
       map<M>(
-        mapper: (value: T, key: number, iter: /*this*/Collection.Set<T>) => M,
+        mapper: (value: T, key: T, iter: this) => M,
         context?: any
       ): Collection.Set<T>;
     }

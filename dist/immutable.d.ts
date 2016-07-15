@@ -140,6 +140,7 @@ declare module Immutable {
    * Create a new immutable List containing the values of the provided
    * iterable-like.
    */
+  export function List(): List<any>;
   export function List<T>(): List<T>;
   export function List<T>(iter: Iterable.Indexed<T>): List<T>;
   export function List<T>(iter: Iterable.Set<T>): List<T>;
@@ -388,6 +389,21 @@ declare module Immutable {
      * @see `Map#asImmutable`
      */
     asImmutable(): List<T>;
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new List with values passed through a
+     * `mapper` function.
+     *
+     *     List([1,2]).map(x => 10 * x)
+     *     // List [ 10, 20 ]
+     *
+     */
+    map<M>(
+      mapper: (value: T, key: number, iter: this) => M,
+      context?: any
+    ): List<M>;
   }
 
 
@@ -455,6 +471,7 @@ declare module Immutable {
    * but since Immutable Map keys can be of any type the argument to `get()` is
    * not altered.
    */
+  export function Map(): Map<any, any>;
   export function Map<K, V>(): Map<K, V>;
   export function Map<K, V>(iter: Iterable.Keyed<K, V>): Map<K, V>;
   export function Map<K, V>(iter: Iterable<any, /*[K,V]*/Array<any>>): Map<K, V>;
@@ -726,6 +743,21 @@ declare module Immutable {
      * copy has become immutable and can be safely returned from a function.
      */
     asImmutable(): Map<K, V>;
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new Map with values passed through a
+     * `mapper` function.
+     *
+     *     Map({ a: 1, b: 2 }).map(x => 10 * x)
+     *     // Map { a: 10, b: 20 }
+     *
+     */
+    map<M>(
+      mapper: (value: V, key: K, iter: this) => M,
+      context?: any
+    ): Map<K, M>;
   }
 
 
@@ -762,6 +794,7 @@ declare module Immutable {
    *     var newOrderedMap = OrderedMap([["key", "value"]]);
    *
    */
+  export function OrderedMap(): OrderedMap<any, any>;
   export function OrderedMap<K, V>(): OrderedMap<K, V>;
   export function OrderedMap<K, V>(iter: Iterable.Keyed<K, V>): OrderedMap<K, V>;
   export function OrderedMap<K, V>(iter: Iterable<any, /*[K,V]*/Array<any>>): OrderedMap<K, V>;
@@ -770,7 +803,24 @@ declare module Immutable {
   export function OrderedMap<K, V>(iterator: Iterator</*[K,V]*/Array<any>>): OrderedMap<K, V>;
   export function OrderedMap<K, V>(iterable: /*Iterable<[K,V]>*/Object): OrderedMap<K, V>;
 
-  export interface OrderedMap<K, V> extends Map<K, V> {}
+  export interface OrderedMap<K, V> extends Map<K, V> {
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new OrderedMap with values passed through a
+     * `mapper` function.
+     *
+     *     OrderedMap({ a: 1, b: 2 }).map(x => 10 * x)
+     *     // OrderedMap { a: 10, b: 20 }
+     *
+     */
+    map<M>(
+      mapper: (value: V, key: K, iter: this) => M,
+      context?: any
+    ): OrderedMap<K, M>;
+
+  }
 
 
   /**
@@ -808,6 +858,7 @@ declare module Immutable {
    * Create a new immutable Set containing the values of the provided
    * iterable-like.
    */
+  export function Set(): Set<any>;
   export function Set<T>(): Set<T>;
   export function Set<T>(iter: Iterable.Set<T>): Set<T>;
   export function Set<T>(iter: Iterable.Indexed<T>): Set<T>;
@@ -883,6 +934,21 @@ declare module Immutable {
      * @see `Map#asImmutable`
      */
     asImmutable(): Set<T>;
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new Set with values passed through a
+     * `mapper` function.
+     *
+     *     Set([1,2]).map(x => 10 * x)
+     *     // Set [10,20]
+     *
+     */
+    map<M>(
+      mapper: (value: T, key: T, iter: this) => M,
+      context?: any
+    ): Set<M>;
   }
 
 
@@ -920,6 +986,7 @@ declare module Immutable {
    * Create a new immutable OrderedSet containing the values of the provided
    * iterable-like.
    */
+  export function OrderedSet(): OrderedSet<any>;
   export function OrderedSet<T>(): OrderedSet<T>;
   export function OrderedSet<T>(iter: Iterable.Set<T>): OrderedSet<T>;
   export function OrderedSet<T>(iter: Iterable.Indexed<T>): OrderedSet<T>;
@@ -928,7 +995,23 @@ declare module Immutable {
   export function OrderedSet<T>(iterator: Iterator<T>): OrderedSet<T>;
   export function OrderedSet<T>(iterable: /*Iterable<T>*/Object): OrderedSet<T>;
 
-  export interface OrderedSet<T> extends Set<T> {}
+  export interface OrderedSet<T> extends Set<T> {
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new Set with values passed through a
+     * `mapper` function.
+     *
+     *     OrderedSet([1,2]).map(x => 10 * x)
+     *     // Set [10,20]
+     *
+     */
+    map<M>(
+      mapper: (value: T, key: T, iter: this) => M,
+      context?: any
+    ): OrderedSet<M>;
+  }
 
 
   /**
@@ -964,6 +1047,7 @@ declare module Immutable {
    * The iteration order of the provided iterable is preserved in the
    * resulting `Stack`.
    */
+  export function Stack(): Stack<any>;
   export function Stack<T>(): Stack<T>;
   export function Stack<T>(iter: Iterable.Indexed<T>): Stack<T>;
   export function Stack<T>(iter: Iterable.Set<T>): Stack<T>;
@@ -1049,6 +1133,21 @@ declare module Immutable {
      * @see `Map#asImmutable`
      */
     asImmutable(): Stack<T>;
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new Stack with values passed through a
+     * `mapper` function.
+     *
+     *     Stack([1,2]).map(x => 10 * x)
+     *     // Stack [10,20]
+     *
+     */
+    map<M>(
+      mapper: (value: T, key: number, iter: this) => M,
+      context?: any
+    ): Stack<M>;
   }
 
 
@@ -1217,6 +1316,7 @@ declare module Immutable {
      * Always returns a Seq.Keyed, if input is not keyed, expects an
      * iterable of [K, V] tuples.
      */
+    export function Keyed(): Seq.Keyed<any, any>;
     export function Keyed<K, V>(): Seq.Keyed<K, V>;
     export function Keyed<K, V>(seq: Iterable.Keyed<K, V>): Seq.Keyed<K, V>;
     export function Keyed<K, V>(seq: Iterable<any, /*[K,V]*/any>): Seq.Keyed<K, V>;
@@ -1231,6 +1331,19 @@ declare module Immutable {
        * Returns itself
        */
       toSeq(): this;
+
+      /**
+       * Returns a new Seq.Keyed with values passed through a
+       * `mapper` function.
+       *
+       *     Indexed([1, 2]).map(x => 10 * x)
+       *     // Indexed [10, 20]
+       *
+       */
+      map<M>(
+        mapper: (value: V, key: K, iter: this) => M,
+        context?: any
+      ): Seq.Keyed<K, M>;
     }
 
 
@@ -1249,6 +1362,7 @@ declare module Immutable {
      * Always returns Seq.Indexed, discarding associated keys and
      * supplying incrementing indices.
      */
+    export function Indexed(): Seq.Indexed<any>;
     export function Indexed<T>(): Seq.Indexed<T>;
     export function Indexed<T>(seq: Iterable.Indexed<T>): Seq.Indexed<T>;
     export function Indexed<T>(seq: Iterable.Set<T>): Seq.Indexed<T>;
@@ -1263,6 +1377,19 @@ declare module Immutable {
        * Returns itself
        */
       toSeq(): this;
+
+      /**
+       * Returns a new Seq.Indexed with values passed through a
+       * `mapper` function.
+       *
+       *     Seq.Indexed({a: 1, b: 2}).map(x => 10 * x)
+       *     // Seq.Indexed {a: 10, b: 20}
+       *
+       */
+      map<M>(
+        mapper: (value: T, key: number, iter: this) => M,
+        context?: any
+      ): Seq.Indexed<M>;
     }
 
 
@@ -1283,6 +1410,7 @@ declare module Immutable {
     /**
      * Always returns a Seq.Set, discarding associated indices or keys.
      */
+    export function Set(): Seq.Set<any>;
     export function Set<T>(): Seq.Set<T>;
     export function Set<T>(seq: Iterable.Set<T>): Seq.Set<T>;
     export function Set<T>(seq: Iterable.Indexed<T>): Seq.Set<T>;
@@ -1297,6 +1425,19 @@ declare module Immutable {
        * Returns itself
        */
       toSeq(): this;
+
+      /**
+       * Returns a new Seq.Set with values passed through a
+       * `mapper` function.
+       *
+       *     Seq.Set([1, 2]).map(x => 10 * x)
+       *     // Seq.Set [10, 20]
+       *
+       */
+      map<M>(
+        mapper: (value: T, key: T, iter: this) => M,
+        context?: any
+      ): Seq.Set<M>;
     }
 
   }
@@ -1314,6 +1455,7 @@ declare module Immutable {
    *   * If an Object, a `Seq.Keyed`.
    *
    */
+  export function Seq(): Seq<any, any>;
   export function Seq<K, V>(): Seq<K, V>;
   export function Seq<K, V>(seq: Seq<K, V>): Seq<K, V>;
   export function Seq<K, V>(iterable: Iterable<K, V>): Seq<K, V>;
@@ -1360,6 +1502,21 @@ declare module Immutable {
      * Note: after calling `cacheResult`, a Seq will always have a `size`.
      */
     cacheResult(): this;
+
+    // Sequence algorithms
+
+    /**
+     * Returns a new Seq with values passed through a
+     * `mapper` function.
+     *
+     *     Seq({a: 1, b: 2}).map(x => 10 * x)
+     *     // Set {a: 10, b: 20}
+     *
+     */
+    map<M>(
+      mapper: (value: V, key: K, iter: this) => M,
+      context?: any
+    ): Seq<K, M>;
   }
 
   /**
@@ -1471,6 +1628,21 @@ declare module Immutable {
         ) => /*[KM, VM]*/Array<any>,
         context?: any
       ): Iterable.Keyed<KM, VM>;
+
+      // Sequence algorithms
+
+      /**
+       * Returns a new Iterable.Keyed with values passed through a
+       * `mapper` function.
+       *
+       *     Iterable.Keyed({a: 1, b: 2}).map(x => 10 * x)
+       *     // Iterable.Keyed {a: 10, b: 20}
+       *
+       */
+      map<M>(
+        mapper: (value: V, key: K, iter: this) => M,
+        context?: any
+      ): Iterable.Keyed<K, M>;
     }
 
 
@@ -1644,6 +1816,21 @@ declare module Immutable {
         predicate: (value?: T, index?: number, iter?: this) => boolean,
         context?: any
       ): number;
+
+      // Sequence algorithms
+
+      /**
+       * Returns a new Iterable.Indexed with values passed through a
+       * `mapper` function.
+       *
+       *     Iterable.Indexed([1,2]).map(x => 10 * x)
+       *     // Iterable.Indexed [1,2]
+       *
+       */
+      map<M>(
+        mapper: (value: T, key: number, iter: this) => M,
+        context?: any
+      ): Iterable.Indexed<T>;
     }
 
 
@@ -1678,6 +1865,21 @@ declare module Immutable {
        * @override
        */
       toSeq(): Seq.Set<T>;
+
+      // Sequence algorithms
+
+      /**
+       * Returns a new Iterable.Set with values passed through a
+       * `mapper` function.
+       *
+       *     Iterable.Set([1,2]).map(x => 10 * x)
+       *     // Iterable.Set [1,2]
+       *
+       */
+      map<M>(
+        mapper: (value: T, key: number, iter: this) => M,
+        context?: any
+      ): Iterable.Set<T>;
     }
 
   }
@@ -1977,7 +2179,7 @@ declare module Immutable {
     filter(
       predicate: (value?: V, key?: K, iter?: this) => boolean,
       context?: any
-    ): Iterable<K, V>;
+    ): this;
 
     /**
      * Returns a new Iterable of the same type with only the entries for which
@@ -1990,7 +2192,7 @@ declare module Immutable {
     filterNot(
       predicate: (value?: V, key?: K, iter?: this) => boolean,
       context?: any
-    ): Iterable<K, V>;
+    ): this;
 
     /**
      * Returns a new Iterable of the same type in reverse order.
@@ -2475,6 +2677,21 @@ declare module Immutable {
        * @override
        */
       toSeq(): Seq.Keyed<K, V>;
+
+      // Sequence algorithms
+
+      /**
+       * Returns a new Collection.Keyed with values passed through a
+       * `mapper` function.
+       *
+       *     Collection.Keyed({a: 1, b: 2}).map(x => 10 * x)
+       *     // Collection.Keyed {a: 10, b: 20}
+       *
+       */
+      map<M>(
+        mapper: (value: V, key: K, iter: this) => M,
+        context?: any
+      ): Collection.Keyed<K, M>;
     }
 
 
@@ -2490,6 +2707,21 @@ declare module Immutable {
        * @override
        */
       toSeq(): Seq.Indexed<T>;
+
+      // Sequence algorithms
+
+      /**
+       * Returns a new Collection.Indexed with values passed through a
+       * `mapper` function.
+       *
+       *     Collection.Indexed([1,2]).map(x => 10 * x)
+       *     // Collection.Indexed [1,2]
+       *
+       */
+      map<M>(
+        mapper: (value: T, key: number, iter: this) => M,
+        context?: any
+      ): Collection.Indexed<T>;
     }
 
 
@@ -2507,6 +2739,21 @@ declare module Immutable {
        * @override
        */
       toSeq(): Seq.Set<T>;
+
+      // Sequence algorithms
+
+      /**
+       * Returns a new Collection.Set with values passed through a
+       * `mapper` function.
+       *
+       *     Collection.Set([1,2]).map(x => 10 * x)
+       *     // Collection.Set [1,2]
+       *
+       */
+      map<M>(
+        mapper: (value: T, key: number, iter: this) => M,
+        context?: any
+      ): Collection.Set<T>;
     }
 
   }
