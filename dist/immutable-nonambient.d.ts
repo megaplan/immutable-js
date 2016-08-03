@@ -1766,7 +1766,7 @@
           iter?: this
         ) => /*[KM, VM]*/Array<any>,
         context?: any
-      ): Iterable.Keyed<KM, VM>;
+      ): /*this*/Iterable.Keyed<KM, VM>;
 
       // Sequence algorithms
 
@@ -1796,6 +1796,8 @@
       concat<I1>(iterable1: Iterable<any, I1>): Iterable.Keyed<K, V | I1>;
       concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Iterable.Keyed<K, V | I1 | I2>;
       concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Iterable.Keyed<K, V | I1 | I2 | I3>;
+
+      [Symbol.iterator](): Iterator<[K, V]>;
     }
 
 
@@ -1998,6 +2000,8 @@
       concat<I1>(iterable1: Iterable<any, I1>): Iterable.Indexed<T | I1>;
       concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Iterable.Indexed<T | I1 | I2>;
       concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Iterable.Indexed<T | I1 | I2 | I3>;
+
+      [Symbol.iterator](): Iterator<T>;
     }
 
 
@@ -2061,6 +2065,8 @@
       concat<I1>(iterable1: Iterable<any, I1>): Iterable.Set<T | I1>;
       concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Iterable.Set<T | I1 | I2>;
       concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Iterable.Set<T | I1 | I2 | I3>;
+
+      [Symbol.iterator](): Iterator<T>;
     }
 
   }
