@@ -9,12 +9,14 @@ describe('count', () => {
 
   it('counts sequences with known lengths', () => {
     expect(Seq.of(1,2,3,4,5).size).toBe(5);
+    expect(Seq.of(1,2,3,4,5).length).toBe(5);
     expect(Seq.of(1,2,3,4,5).count()).toBe(5);
   })
 
   it('counts sequences with unknown lengths, resulting in a cached size', () => {
     var seq = Seq.of(1,2,3,4,5,6).filter(x => x % 2 === 0);
     expect(seq.size).toBe(undefined);
+    expect(seq.length).toBe(undefined);
     expect(seq.count()).toBe(3);
     expect(seq.size).toBe(3);
   })
@@ -22,6 +24,7 @@ describe('count', () => {
   it('counts sequences with a specific predicate', () => {
     var seq = Seq.of(1,2,3,4,5,6);
     expect(seq.size).toBe(6);
+    expect(seq.length).toBe(6);
     expect(seq.count(x => x > 3)).toBe(3);
   })
 
@@ -55,34 +58,43 @@ describe('count', () => {
 
     it('is O(1) on sequences with known lengths', () => {
       expect(Seq.of(1,2,3,4,5).size).toBe(5);
+      expect(Seq.of(1,2,3,4,5).length).toBe(5);
       expect(Seq.of(1,2,3,4,5).isEmpty()).toBe(false);
       expect(Seq().size).toBe(0);
+      expect(Seq().length).toBe(0);
       expect(Seq().isEmpty()).toBe(true);
     })
 
     it('lazily evaluates Seq with unknown length', () => {
       var seq = Seq.of(1,2,3,4,5,6).filter(x => x % 2 === 0);
       expect(seq.size).toBe(undefined);
+      expect(seq.length).toBe(undefined);
       expect(seq.isEmpty()).toBe(false);
       expect(seq.size).toBe(undefined);
+      expect(seq.length).toBe(undefined);
 
       var seq = Seq.of(1,2,3,4,5,6).filter(x => x > 10);
       expect(seq.size).toBe(undefined);
+      expect(seq.length).toBe(undefined);
       expect(seq.isEmpty()).toBe(true);
       expect(seq.size).toBe(undefined);
+      expect(seq.length).toBe(undefined);
     })
 
     it('with infinitely long sequences of known length', () => {
       var seq = Range();
       expect(seq.size).toBe(Infinity);
+      expect(seq.length).toBe(Infinity);
       expect(seq.isEmpty()).toBe(false);
     })
 
     it('with infinitely long sequences of unknown length', () => {
       var seq = Range().filter(x => x % 2 === 0);
       expect(seq.size).toBe(undefined);
+      expect(seq.length).toBe(undefined);
       expect(seq.isEmpty()).toBe(false);
       expect(seq.size).toBe(undefined);
+      expect(seq.length).toBe(undefined);
     })
 
   })

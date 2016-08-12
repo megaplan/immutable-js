@@ -15,6 +15,11 @@ export class Iterable {
     return isIterable(value) ? value : Seq(value);
   }
 }
+Object.defineProperty(Iterable.prototype, "length", {
+  get: function() {
+    return this.size;
+  }
+});
 
 export class KeyedIterable extends Iterable {
   constructor(value) {

@@ -24,6 +24,11 @@
       return isIterable(value) ? value : Seq(value);
     }
 
+  Object.defineProperty(Iterable.prototype, "length", {
+    get: function() {
+      return this.size;
+    }
+  });
 
   createClass(KeyedIterable, Iterable);
     function KeyedIterable(value) {

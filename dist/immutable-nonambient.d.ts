@@ -2095,6 +2095,8 @@
 
   export interface Iterable<K, V> {
 
+    length: number;
+
     // Value equality
 
     /**
