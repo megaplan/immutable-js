@@ -414,10 +414,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): List<T>;
-    concat<I1>(iterable1: Iterable<any, I1>): List<T | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): List<T | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): List<T | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): List<T>;
+    concat<I1>(iterable1: ES6Iterable<I1>): List<T | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): List<T | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): List<T | I1 | I2 | I3>;
   }
 
 
@@ -782,10 +782,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<V> | Iterable<any, V> | Array<V> | V>): Map<K, V>;
-    concat<I1>(iterable1: Iterable<any, I1>): Map<K, V | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Map<K, V | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Map<K, V | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<V> | Array<V> | V>): Map<K, V>;
+    concat<I1>(iterable1: ES6Iterable<I1>): Map<K, V | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Map<K, V | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Map<K, V | I1 | I2 | I3>;
   }
 
 
@@ -857,10 +857,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<V> | Iterable<any, V> | Array<V> | V>): OrderedMap<K, V>;
-    concat<I1>(iterable1: Iterable<any, I1>): OrderedMap<K, V | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): OrderedMap<K, V | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): OrderedMap<K, V | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<V> | Array<V> | V>): OrderedMap<K, V>;
+    concat<I1>(iterable1: ES6Iterable<I1>): OrderedMap<K, V | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): OrderedMap<K, V | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): OrderedMap<K, V | I1 | I2 | I3>;
   }
 
 
@@ -1000,10 +1000,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Set<T>;
-    concat<I1>(iterable1: Iterable<any, I1>): Set<T | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Set<T | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Set<T | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Set<T>;
+    concat<I1>(iterable1: ES6Iterable<I1>): Set<T | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Set<T | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Set<T | I1 | I2 | I3>;
   }
 
 
@@ -1076,10 +1076,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): OrderedSet<T>;
-    concat<I1>(iterable1: Iterable<any, I1>): OrderedSet<T | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): OrderedSet<T | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): OrderedSet<T | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): OrderedSet<T>;
+    concat<I1>(iterable1: ES6Iterable<I1>): OrderedSet<T | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): OrderedSet<T | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): OrderedSet<T | I1 | I2 | I3>;
   }
 
 
@@ -1227,10 +1227,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Stack<T>;
-    concat<I1>(iterable1: Iterable<any, I1>): Stack<T | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Stack<T | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Stack<T | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Stack<T>;
+    concat<I1>(iterable1: ES6Iterable<I1>): Stack<T | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Stack<T | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Stack<T | I1 | I2 | I3>;
   }
 
 
@@ -1437,10 +1437,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<V> | Iterable<any, V> | Array<V> | V>): Seq.Keyed<K, V>;
-      concat<I1>(iterable1: Iterable<any, I1>): Seq.Keyed<K, V | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Seq.Keyed<K, V | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Seq.Keyed<K, V | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<V> | Array<V> | V>): Seq.Keyed<K, V>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Seq.Keyed<K, V | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Seq.Keyed<K, V | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Seq.Keyed<K, V | I1 | I2 | I3>;
     }
 
 
@@ -1497,10 +1497,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Seq.Indexed<T>;
-      concat<I1>(iterable1: Iterable<any, I1>): Seq.Indexed<T | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Seq.Indexed<T | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Seq.Indexed<T | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Seq.Indexed<T>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Seq.Indexed<T | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Seq.Indexed<T | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Seq.Indexed<T | I1 | I2 | I3>;
     }
 
 
@@ -1559,10 +1559,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Seq.Set<T>;
-      concat<I1>(iterable1: Iterable<any, I1>): Seq.Set<T | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Seq.Set<T | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Seq.Set<T | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Seq.Set<T>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Seq.Set<T | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Seq.Set<T | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Seq.Set<T | I1 | I2 | I3>;
     }
 
   }
@@ -1652,10 +1652,10 @@ declare module Immutable {
      * For Seqs, all entries will be present in
      * the resulting iterable, even if they have the same key.
      */
-    concat(...valuesOrIterables: Array<ES6Iterable<V> | Iterable<any, V> | Array<V> | V>): Seq<K, V>;
-    concat<I1>(iterable1: Iterable<any, I1>): Seq<K, V | I1>;
-    concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Seq<K, V | I1 | I2>;
-    concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Seq<K, V | I1 | I2 | I3>;
+    concat(...valuesOrIterables: Array<ES6Iterable<V> | Array<V> | V>): Seq<K, V>;
+    concat<I1>(iterable1: ES6Iterable<I1>): Seq<K, V | I1>;
+    concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Seq<K, V | I1 | I2>;
+    concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Seq<K, V | I1 | I2 | I3>;
   }
 
   /**
@@ -1792,10 +1792,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<V> | Iterable<any, V> | Array<V> | V>): Iterable.Keyed<K, V>;
-      concat<I1>(iterable1: Iterable<any, I1>): Iterable.Keyed<K, V | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Iterable.Keyed<K, V | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Iterable.Keyed<K, V | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<V> | Array<V> | V>): Iterable.Keyed<K, V>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Iterable.Keyed<K, V | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Iterable.Keyed<K, V | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Iterable.Keyed<K, V | I1 | I2 | I3>;
 
       [Symbol.iterator](): Iterator<[K, V]>;
     }
@@ -1996,10 +1996,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Iterable.Indexed<T>;
-      concat<I1>(iterable1: Iterable<any, I1>): Iterable.Indexed<T | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Iterable.Indexed<T | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Iterable.Indexed<T | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Iterable.Indexed<T>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Iterable.Indexed<T | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Iterable.Indexed<T | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Iterable.Indexed<T | I1 | I2 | I3>;
 
       [Symbol.iterator](): Iterator<T>;
     }
@@ -2061,10 +2061,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Iterable.Set<T>;
-      concat<I1>(iterable1: Iterable<any, I1>): Iterable.Set<T | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Iterable.Set<T | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Iterable.Set<T | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Iterable.Set<T>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Iterable.Set<T | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Iterable.Set<T | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Iterable.Set<T | I1 | I2 | I3>;
 
       [Symbol.iterator](): Iterator<T>;
     }
@@ -2891,10 +2891,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<V> | Iterable<any, V> | Array<V> | V>): Collection.Keyed<K, V>;
-      concat<I1>(iterable1: Iterable<any, I1>): Collection.Keyed<K, V | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Collection.Keyed<K, V | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Collection.Keyed<K, V | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<V> | Array<V> | V>): Collection.Keyed<K, V>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Collection.Keyed<K, V | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Collection.Keyed<K, V | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Collection.Keyed<K, V | I1 | I2 | I3>;
     }
 
 
@@ -2935,10 +2935,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Collection.Indexed<T>;
-      concat<I1>(iterable1: Iterable<any, I1>): Collection.Indexed<T | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Collection.Indexed<T | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Collection.Indexed<T | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Collection.Indexed<T>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Collection.Indexed<T | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Collection.Indexed<T | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Collection.Indexed<T | I1 | I2 | I3>;
     }
 
 
@@ -2981,10 +2981,10 @@ declare module Immutable {
        * For Seqs, all entries will be present in
        * the resulting iterable, even if they have the same key.
        */
-      concat(...valuesOrIterables: Array<ES6Iterable<T> | Iterable<any, T> | Array<T> | T>): Collection.Set<T>;
-      concat<I1>(iterable1: Iterable<any, I1>): Collection.Set<T | I1>;
-      concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): Collection.Set<T | I1 | I2>;
-      concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): Collection.Set<T | I1 | I2 | I3>;
+      concat(...valuesOrIterables: Array<ES6Iterable<T> | Array<T> | T>): Collection.Set<T>;
+      concat<I1>(iterable1: ES6Iterable<I1>): Collection.Set<T | I1>;
+      concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Collection.Set<T | I1 | I2>;
+      concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Collection.Set<T | I1 | I2 | I3>;
     }
 
   }
