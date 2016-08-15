@@ -2716,7 +2716,7 @@ declare module Immutable {
       predicate: (value?: V, key?: K, iter?: this) => boolean,
       context?: any,
       notSetValue?: V
-    ): /*[K, V]*/Array<any>;
+    ): [K, V];
 
     /**
      * Returns the last [key, value] entry for which the `predicate`
@@ -2728,7 +2728,7 @@ declare module Immutable {
       predicate: (value?: V, key?: K, iter?: this) => boolean,
       context?: any,
       notSetValue?: V
-    ): /*[K, V]*/Array<any>;
+    ): [K, V];
 
     /**
      * Returns the key for which the `predicate` returns true.
