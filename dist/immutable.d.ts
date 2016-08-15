@@ -936,9 +936,9 @@ declare module Immutable {
      * exist in this Set.
      * @alias merge
      */
-    union(...iterables: Iterable<any, T>[]): Set<T>;
+    union(...iterables: (Iterable<any, T> | ES6Iterable<T>)[]): Set<T>;
     union(...iterables: Array<T>[]): Set<T>;
-    merge(...iterables: Iterable<any, T>[]): Set<T>;
+    merge(...iterables: (Iterable<any, T> | ES6Iterable<T>)[]): Set<T>;
     merge(...iterables: Array<T>[]): Set<T>;
 
 
@@ -946,13 +946,13 @@ declare module Immutable {
      * Returns a Set which has removed any values not also contained
      * within `iterables`.
      */
-    intersect(...iterables: Iterable<any, T>[]): Set<T>;
+    intersect(...iterables: (Iterable<any, T> | ES6Iterable<T>)[]): Set<T>;
     intersect(...iterables: Array<T>[]): Set<T>;
 
     /**
      * Returns a Set excluding any values contained within `iterables`.
      */
-    subtract(...iterables: Iterable<any, T>[]): Set<T>;
+    subtract(...iterables: (Iterable<any, T> | ES6Iterable<T>)[]): Set<T>;
     subtract(...iterables: Array<T>[]): Set<T>;
 
 
