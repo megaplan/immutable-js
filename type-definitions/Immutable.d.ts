@@ -418,8 +418,6 @@ declare module Immutable {
     concat<I1>(iterable1: Iterable<any, I1>): List<T | I1>;
     concat<I1, I2>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>): List<T | I1 | I2>;
     concat<I1, I2, I3>(iterable1: Iterable<any, I1>, iterable2: Iterable<any, I2>, iterable3: Iterable<any, I3>): List<T | I1 | I2 | I3>;
-
-    groupBy<G>(grouper: (value: T, index: number) => G): Map<G, List<T>>;
   }
 
 
