@@ -2320,7 +2320,7 @@ declare module Immutable {
      *
      * Note: this will return an ES6 iterator which does not support Immutable JS sequence algorithms. Use `entrySeq` instead, if this is what you want.
      */
-    entries(): Iterator</*[K, V]*/Array<any>>;
+    entries(): Iterator<[K, V]>;
 
 
     // Iterables (Seq)
