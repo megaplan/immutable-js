@@ -1797,7 +1797,7 @@ declare module Immutable {
       concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Iterable.Keyed<K, V | I1 | I2>;
       concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Iterable.Keyed<K, V | I1 | I2 | I3>;
 
-      [Symbol.iterator](): Iterator<[K, V]>;
+      [Symbol.iterator](): ES6IterableIterator<[K, V]>;
     }
 
 
@@ -2001,7 +2001,7 @@ declare module Immutable {
       concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Iterable.Indexed<T | I1 | I2>;
       concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Iterable.Indexed<T | I1 | I2 | I3>;
 
-      [Symbol.iterator](): Iterator<T>;
+      [Symbol.iterator](): ES6IterableIterator<T>;
     }
 
 
@@ -2066,7 +2066,7 @@ declare module Immutable {
       concat<I1, I2>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>): Iterable.Set<T | I1 | I2>;
       concat<I1, I2, I3>(iterable1: ES6Iterable<I1>, iterable2: ES6Iterable<I2>, iterable3: ES6Iterable<I3>): Iterable.Set<T | I1 | I2 | I3>;
 
-      [Symbol.iterator](): Iterator<T>;
+      [Symbol.iterator](): ES6IterableIterator<T>;
     }
 
   }
@@ -3015,7 +3015,7 @@ declare module Immutable {
    * @ignore
    */
   interface ES6Iterable<T> {
-    [Symbol.iterator](): Iterator<T>;
+    [Symbol.iterator](): ES6IterableIterator<T>;
   }
 
   /**
@@ -3023,7 +3023,7 @@ declare module Immutable {
    * @ignore
    */
   interface ES6IterableIterator<T> extends Iterator<T> {
-    [Symbol.iterator](): Iterator<T>;
+    [Symbol.iterator](): ES6IterableIterator<T>;
   }
 
 }
