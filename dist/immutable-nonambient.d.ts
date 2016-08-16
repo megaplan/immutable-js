@@ -2306,21 +2306,21 @@
      *
      * Note: this will return an ES6 iterator which does not support Immutable JS sequence algorithms. Use `keySeq` instead, if this is what you want.
      */
-    keys(): Iterator<K>;
+    keys(): ES6IterableIterator<K>;
 
     /**
      * An iterator of this `Iterable`'s values.
      *
      * Note: this will return an ES6 iterator which does not support Immutable JS sequence algorithms. Use `valueSeq` instead, if this is what you want.
      */
-    values(): Iterator<V>;
+    values(): ES6IterableIterator<V>;
 
     /**
      * An iterator of this `Iterable`'s entries as `[key, value]` tuples.
      *
      * Note: this will return an ES6 iterator which does not support Immutable JS sequence algorithms. Use `entrySeq` instead, if this is what you want.
      */
-    entries(): Iterator<[K, V]>;
+    entries(): ES6IterableIterator<[K, V]>;
 
 
     // Iterables (Seq)
@@ -3015,6 +3015,14 @@
    * @ignore
    */
   interface ES6Iterable<T> {
+    [Symbol.iterator](): Iterator<T>;
+  }
+
+  /**
+   * ES6 IterableIterator
+   * @ignore
+   */
+  interface ES6IterableIterator<T> extends Iterator<T> {
     [Symbol.iterator](): Iterator<T>;
   }
 
