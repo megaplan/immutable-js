@@ -146,7 +146,7 @@ declare module Immutable {
   export function List<T>(iter: Iterable.Set<T>): List<T>;
   export function List<K, V>(iter: Iterable.Keyed<K, V>): List</*[K,V]*/any>;
   export function List<T>(array: Array<T>): List<T>;
-  export function List<T>(iterator: Iterator<T>): List<T>;
+  export function List<T>(iterator: Iterator<T> | ES6Iterable<T>): List<T>;
   export function List<T>(iterable: /*Iterable<T>*/Object): List<T>;
 
 
@@ -491,7 +491,7 @@ declare module Immutable {
   export function Map<K, V>(iter: Iterable<any, /*[K,V]*/Array<any>>): Map<K, V>;
   export function Map<K, V>(array: Array</*[K,V]*/Array<any>>): Map<K, V>;
   export function Map<V>(obj: {[key: string]: V}): Map<string, V>;
-  export function Map<K, V>(iterator: Iterator</*[K,V]*/Array<any>>): Map<K, V>;
+  export function Map<K, V>(iterator: Iterator</*[K,V]*/Array<any>> | ES6Iterable<[K, V]>): Map<K, V>;
   export function Map<K, V>(iterable: /*Iterable<[K,V]>*/Object): Map<K, V>;
 
   export interface Map<K, V> extends Collection.Keyed<K, V> {
@@ -828,7 +828,7 @@ declare module Immutable {
   export function OrderedMap<K, V>(iter: Iterable<any, /*[K,V]*/Array<any>>): OrderedMap<K, V>;
   export function OrderedMap<K, V>(array: Array</*[K,V]*/Array<any>>): OrderedMap<K, V>;
   export function OrderedMap<V>(obj: {[key: string]: V}): OrderedMap<string, V>;
-  export function OrderedMap<K, V>(iterator: Iterator</*[K,V]*/Array<any>>): OrderedMap<K, V>;
+  export function OrderedMap<K, V>(iterator: Iterator</*[K,V]*/Array<any>> | ES6Iterable<[K, V]>): OrderedMap<K, V>;
   export function OrderedMap<K, V>(iterable: /*Iterable<[K,V]>*/Object): OrderedMap<K, V>;
 
   export interface OrderedMap<K, V> extends Map<K, V> {
@@ -905,7 +905,7 @@ declare module Immutable {
   export function Set<T>(iter: Iterable.Indexed<T>): Set<T>;
   export function Set<K, V>(iter: Iterable.Keyed<K, V>): Set</*[K,V]*/any>;
   export function Set<T>(array: Array<T>): Set<T>;
-  export function Set<T>(iterator: Iterator<T>): Set<T>;
+  export function Set<T>(iterator: Iterator<T> | ES6Iterable<T>): Set<T>;
   export function Set<T>(iterable: /*Iterable<T>*/Object): Set<T>;
 
   export interface Set<T> extends Collection.Set<T> {
@@ -1047,7 +1047,7 @@ declare module Immutable {
   export function OrderedSet<T>(iter: Iterable.Indexed<T>): OrderedSet<T>;
   export function OrderedSet<K, V>(iter: Iterable.Keyed<K, V>): OrderedSet</*[K,V]*/any>;
   export function OrderedSet<T>(array: Array<T>): OrderedSet<T>;
-  export function OrderedSet<T>(iterator: Iterator<T>): OrderedSet<T>;
+  export function OrderedSet<T>(iterator: Iterator<T> | ES6Iterable<T>): OrderedSet<T>;
   export function OrderedSet<T>(iterable: /*Iterable<T>*/Object): OrderedSet<T>;
 
   export interface OrderedSet<T> extends Set<T> {
@@ -1122,7 +1122,7 @@ declare module Immutable {
   export function Stack<T>(iter: Iterable.Set<T>): Stack<T>;
   export function Stack<K, V>(iter: Iterable.Keyed<K, V>): Stack</*[K,V]*/any>;
   export function Stack<T>(array: Array<T>): Stack<T>;
-  export function Stack<T>(iterator: Iterator<T>): Stack<T>;
+  export function Stack<T>(iterator: Iterator<T> | ES6Iterable<T>): Stack<T>;
   export function Stack<T>(iterable: /*Iterable<T>*/Object): Stack<T>;
 
   export interface Stack<T> extends Collection.Indexed<T> {
@@ -1465,7 +1465,7 @@ declare module Immutable {
     export function Indexed<T>(seq: Iterable.Set<T>): Seq.Indexed<T>;
     export function Indexed<K, V>(seq: Iterable.Keyed<K, V>): Seq.Indexed</*[K,V]*/any>;
     export function Indexed<T>(array: Array<T>): Seq.Indexed<T>;
-    export function Indexed<T>(iterator: Iterator<T>): Seq.Indexed<T>;
+    export function Indexed<T>(iterator: Iterator<T> | ES6Iterable<T>): Seq.Indexed<T>;
     export function Indexed<T>(iterable: /*Iterable<T>*/Object): Seq.Indexed<T>;
 
     export interface Indexed<T> extends Seq<number, T>, Iterable.Indexed<T> {
@@ -1527,7 +1527,7 @@ declare module Immutable {
     export function Set<T>(seq: Iterable.Indexed<T>): Seq.Set<T>;
     export function Set<K, V>(seq: Iterable.Keyed<K, V>): Seq.Set</*[K,V]*/any>;
     export function Set<T>(array: Array<T>): Seq.Set<T>;
-    export function Set<T>(iterator: Iterator<T>): Seq.Set<T>;
+    export function Set<T>(iterator: Iterator<T> | ES6Iterable<T>): Seq.Set<T>;
     export function Set<T>(iterable: /*Iterable<T>*/Object): Seq.Set<T>;
 
     export interface Set<T> extends Seq<T, T>, Iterable.Set<T> {
@@ -1586,7 +1586,7 @@ declare module Immutable {
   export function Seq<K, V>(iterable: Iterable<K, V>): Seq<K, V>;
   export function Seq<T>(array: Array<T>): Seq.Indexed<T>;
   export function Seq<V>(obj: {[key: string]: V}): Seq.Keyed<string, V>;
-  export function Seq<T>(iterator: Iterator<T>): Seq.Indexed<T>;
+  export function Seq<T>(iterator: Iterator<T> | ES6Iterable<T>): Seq.Indexed<T>;
   export function Seq<T>(iterable: /*ES6Iterable<T>*/Object): Seq.Indexed<T>;
 
   export interface Seq<K, V> extends Iterable<K, V> {
@@ -1825,7 +1825,7 @@ declare module Immutable {
     export function Indexed<T>(iter: Iterable.Set<T>): Iterable.Indexed<T>;
     export function Indexed<K, V>(iter: Iterable.Keyed<K, V>): Iterable.Indexed</*[K,V]*/any>;
     export function Indexed<T>(array: Array<T>): Iterable.Indexed<T>;
-    export function Indexed<T>(iterator: Iterator<T>): Iterable.Indexed<T>;
+    export function Indexed<T>(iterator: Iterator<T> | ES6Iterable<T>): Iterable.Indexed<T>;
     export function Indexed<T>(iterable: /*Iterable<T>*/Object): Iterable.Indexed<T>;
 
     export interface Indexed<T> extends Iterable<number, T> {
@@ -2026,7 +2026,7 @@ declare module Immutable {
     export function Set<T>(iter: Iterable.Indexed<T>): Iterable.Set<T>;
     export function Set<K, V>(iter: Iterable.Keyed<K, V>): Iterable.Set</*[K,V]*/any>;
     export function Set<T>(array: Array<T>): Iterable.Set<T>;
-    export function Set<T>(iterator: Iterator<T>): Iterable.Set<T>;
+    export function Set<T>(iterator: Iterator<T> | ES6Iterable<T>): Iterable.Set<T>;
     export function Set<T>(iterable: /*Iterable<T>*/Object): Iterable.Set<T>;
 
     export interface Set<T> extends Iterable<T, T> {
@@ -2089,7 +2089,7 @@ declare module Immutable {
   export function Iterable<K, V>(iterable: Iterable<K, V>): Iterable<K, V>;
   export function Iterable<T>(array: Array<T>): Iterable.Indexed<T>;
   export function Iterable<V>(obj: {[key: string]: V}): Iterable.Keyed<string, V>;
-  export function Iterable<T>(iterator: Iterator<T>): Iterable.Indexed<T>;
+  export function Iterable<T>(iterator: Iterator<T> | ES6Iterable<T>): Iterable.Indexed<T>;
   export function Iterable<T>(iterable: /*ES6Iterable<T>*/Object): Iterable.Indexed<T>;
   export function Iterable<V>(value: V): Iterable.Indexed<V>;
 
