@@ -1,5 +1,5 @@
 {
-  "name": "@megaplan/immutable",
+  "name": "immutable",
   "version": "3.8.1",
   "description": "Immutable Data Collections",
   "homepage": "https://facebook.github.com/immutable-js",
